@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco-runner의 이야기</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background: black;
+        height: 60000px;
+      }
+      div {
+        margin-top: 1000px;
+        color: white;
+        text-align: center;
+        opacity: 0.01; /*글자가 observer에 감지되기 전 투명도*/
+        transition: all 0.5s; /*글자 opacity가 서서히 변하도록 transition: all 0.5로 설정*/
+      }
+    </style>
+
+    <div><h1>인간 중심주의를 아시나요?</h1></div>
+    <div>
+      <h2>
+        인간 중심주의란 오직 인간만이 이성을 지닌 존재라는 점에서 인간에게만
+        본래적 가치를 인정하고, <br />자연을 순전히 인간의 이익이나 필요에 따라
+        평가하는 관점이다.
+      </h2>
+      <br />
+      <h3>
+        이는 인간의 욕구 충족을 위한 도구로서 자연이 지니는 유용성을 중시하는
+        '도구적 자연관'에 근거한다.
+      </h3>
+    </div>
+    <div>
+      <h2>
+        인간은 자연을 탐구하고 개발함으로써 과학 기술의 발전과 경제 성장을
+        이루어 인간의 삶을 풍요롭게 하고, <br />물질적인 욕망을 좇아 자연을
+        함부로 사용하여 훼손한 결과
+      </h2>
+    </div>
+    <div>
+      <h1>자원 고갈, 환경 오염, 생태계 파괴 등과 같은 환경 위기가 나타났다.</h1>
+    </div>
+    <div>
+      <h2>
+        Eco-runner!는 이러한 인간 중심주의로 인해 초래된 현대사회의 환경
+        위기로부터 환경을 정화하여 지키려는 player의 러닝 게임이다.
+      </h2>
+      <div><img src="player_up.png" /></div>
+    </div>
+    <div>
+      <h2>
+        player는 공장에서 나오는 폐수나 가스들, 인간이 만들어낸 쓰레기로 인해서
+        오염된 환경을 배경으로 더 많은 환경들을 정화하기 위해 달린다.
+      </h2>
+    </div>
+    <div><img src="dust.png" /></div>
+    <div><img src="trash.png" /></div>
+    <div><img src="background.png" /></div>
+
+    <script>
+      //new IntersectionObserver()를 변수에 저장해서 사용, 감시중 박스가 화면에 등장하면 {}안의 코드 실행해줌
+      //여기서 입력한 e는 감시중인 모든 div박스 의미(출력해보면 대충 [박스0, 박스1, 박스2, 박스3 ..])
+      //forEach()로 왼쪽 배열 박스에 있던 자료들을 하나씩 box로 꺼내서 글자 opacity를 1로 설정 -> 애니메이션
+      let observer = new IntersectionObserver((e) => {
+        e.forEach((box) => {
+          //div 박스가 화면에 보일때만 실행되도록 if문 작성
+          if (box.isIntersecting) {
+            box.target.style.opacity = 1;
+          }
+        });
+      });
+
+      //div요소를 querySelectorAll()로 모두 찾아와서 변수에 넣어서 한번에 관리
+      let div = document.querySelectorAll("div");
+      //observer.observe() 괄호안에 html요소를 넣어서 내가 원하는 html 요소가 화면에 등장하는지, 사라지는지를 능동적으로 감시해줌
+      observer.observe(div[0]); //div[0] -> 첫번째 div 의미
+      observer.observe(div[1]);
+      observer.observe(div[2]);
+      observer.observe(div[3]);
+      observer.observe(div[4]);
+      observer.observe(div[5]);
+      observer.observe(div[6]);
+      observer.observe(div[7]);
+      observer.observe(div[8]);
+      observer.observe(div[9]);
+
+      setInterval(() => {
+        // console.log(
+        //   window.scrollY + "|" + document.scrollingElement.scrollHeight
+        // );
+
+        if (window.scrollY > 13000) {
+          location.href = "./news.html";
+        }
+      }, 200);
+    </script>
+  </body>
+</html>

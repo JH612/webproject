@@ -1,0 +1,19 @@
+.container{
+    width: 300vw;
+    transition: 0.5s;
+}
+
+.inner{
+    width: 100vw;
+    float: left; /*inner에 있는 이미지를 한줄로 놓기 위해서 float: left*/
+}
+
+.inner img{
+    width: 50%;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    color: white;
+  }

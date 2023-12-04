@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게임 제작 배경</title>
+    <link href="story.css" rel="stylesheet" />
+    <!--css파일 link 해줌-->
+  </head>
+  <body style="margin: 0">
+    <h2>
+      사진을 클릭해서 게임 제작 배경이 된 환경 오염 문제들을 확인해보세요 !
+    </h2>
+    <br />
+    <div style="overflow: hidden">
+      <div class="container">
+        <div class="inner">
+          <a
+            href="https://youtu.be/MpAB0-g0k4k?si=j_2rCbb04hVkfPAZ"
+            target="_blank"
+          >
+            <img src="img1.png" />
+          </a>
+        </div>
+        <div class="inner">
+          <a
+            href="https://youtu.be/yrdMIXrxx4E?si=5M_K_hfI46EGe8iJ"
+            target="_blank"
+          >
+            <img src="img2.png" />
+          </a>
+        </div>
+        <div class="inner">
+          <a
+            href="https://youtu.be/15I07hpcWKY?si=fHa_KHl33SKBAYAT"
+            target="_blank"
+          >
+            <img src="img3.png" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <button class="버튼1">대기 오염 문제</button>
+    <button class="버튼2">쓰레기 문제</button>
+    <button class="버튼3">폐수 문제</button>
+
+    <script>
+      document.querySelector(".버튼1").addEventListener("click", function () {
+        document.querySelector(".container").style.transform = "translate(0vw)";
+      });
+
+      //querySelector로 버튼2라는 요소 찾아서 addEventListener로 클릭되었을 시 transform: translate(-100vw)
+      document.querySelector(".버튼2").addEventListener("click", function () {
+        document.querySelector(".container").style.transform =
+          "translate(-100vw)";
+      });
+
+      document.querySelector(".버튼3").addEventListener("click", function () {
+        document.querySelector(".container").style.transform =
+          "translate(-200vw)";
+      });
+    </script>
+  </body>
+</html>
